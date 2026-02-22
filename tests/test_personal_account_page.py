@@ -2,6 +2,7 @@ from pages.personal_account_page import PersonalAccountPage
 
 def test_open_constructor_from_personal_account_page(login_successful):
     main_page = login_successful
+    assert login_successful.is_login_successful()
     personal_account_page = PersonalAccountPage(main_page.driver)
     
     personal_account_page.open_personal_account()
@@ -10,6 +11,8 @@ def test_open_constructor_from_personal_account_page(login_successful):
 
 def test_click_logo_from_personal_account_page(login_successful):
     main_page = login_successful
+    assert login_successful.is_login_successful()
+
     personal_account_page = PersonalAccountPage(main_page.driver)
 
     personal_account_page.open_personal_account()
@@ -18,6 +21,8 @@ def test_click_logo_from_personal_account_page(login_successful):
 
 def test_logout_from_personal_account_page(login_successful):
     main_page = login_successful
+    assert login_successful.is_login_successful()
+
     personal_account_page = PersonalAccountPage(main_page.driver)
 
     personal_account_page.open_personal_account()
