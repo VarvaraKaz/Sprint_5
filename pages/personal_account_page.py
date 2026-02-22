@@ -4,19 +4,19 @@ from locators import (MainPageLocators, PersonalAccountLocators, LogInPageLocato
 class PersonalAccountPage(BasePage):
 
     def open_personal_account(self):
-        self.click(MainPageLocators.Personal_Account_Button)
+        self.click(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
 
     def click_constructor(self):
-        self.click(PersonalAccountLocators.Constructor_Button)
+        self.click(PersonalAccountLocators.CONSTRUCTOR_BUTTON)
 
     def is_constuctor_visible(self):
-        return self.find_element(MainPageLocators.Constructor_section)
+        return self.find_element(MainPageLocators.CONSTRUCTOR_SECTION)
 
     def click_logo(self):
-        self.click(PersonalAccountLocators.Logo)
+        self.click(PersonalAccountLocators.LOGO)
 
     def click_logout_button(self):
-        self.click(PersonalAccountLocators.Logout_Button)
+        self.click(PersonalAccountLocators.LOGOUT_BUTTON)
     
     def is_logout_successful(self):
-        return self.find_element(LogInPageLocators.Login_button_Login_Page)
+        return self.find_element(LogInPageLocators.LOGIN_BUTTON_LOGIN_PAGE)
