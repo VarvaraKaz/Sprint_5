@@ -1,0 +1,2 @@
+TEST_NAME = "TestName"
+TEST_PASSWORD = "123456"
