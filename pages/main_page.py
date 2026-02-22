@@ -8,28 +8,32 @@ class MainPage(BasePage):
         self.open(BASE_URL)
     
     def click_login_button_on_main_page(self):
-        self.click(MainPageLocators.Login_Button_Main_Page)
+        self.click(MainPageLocators.LOGIN_BUTTON_MAIN_PAGE)
     
     def click_personal_account(self):
-        self.click(MainPageLocators.Personal_Account_Button)
+        self.click(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
 
     def is_personal_account_opened(self):
-        return self.find_element(PersonalAccountLocators.Logout_Button).is_displayed()
+        return self.find_element(PersonalAccountLocators.LOGOUT_BUTTON).is_displayed()
 
     def click_bulki_tab(self):
-        self.click(ConstructorLocators.Bulki_Tab)
+        self.click(ConstructorLocators.BULKI_TAB)
 
     def click_sauces_tab(self):
-        self.click(ConstructorLocators.Sauces_Tab)
+        self.click(ConstructorLocators.SAUCES_TAB)
 
     def click_nachinki_tab(self):
-        self.click(ConstructorLocators.Nachinki_Tab)
+        self.click(ConstructorLocators.NACHINKI_TAB)
 
-    def is_bulki_tab_visible(self):
-        return self.find_element(ConstructorLocators.Bulki_Tab).is_displayed()
+    def is_tab_active(self, tab_locator):
+        element = self.find_element(tab_locator)
+        return "tab_tab_type_current" in element.get_attribute("class")
+
+    def is_bulki_tab_active(self):
+        return self.is_tab_active(ConstructorLocators.BULKI_TAB)
     
-    def is_sauces_tab_visible(self):
-        return self.find_element(ConstructorLocators.Sauces_Tab).is_displayed()
+    def is_sauces_tab_active(self):
+        return self.is_tab_active(ConstructorLocators.SAUCES_TAB)
     
-    def is_nachinki_tab_visible(self):
-        return self.find_element(ConstructorLocators.Nachinki_Tab).is_displayed()
+    def is_nachinki_tab_active(self):
+        return self.is_tab_active(ConstructorLocators.NACHINKI_TAB)
