@@ -9,7 +9,7 @@ class ForgotPasswordPage(BasePage):
         self.open(FORGOR_PASSWORD_URL)
 
     def click_login_button(self):
-        self.click(ForgotPasswordPageLocators.Login_Button_on_Forgot_Password_Page)
+        self.click(ForgotPasswordPageLocators.LOGIN_BUTTON_ON_FORGOT_PASSWORD_PAGE)
 
     def click_personal_account_button(self):
-        self.click(MainPageLocators.Personal_Account_Button)
+        self.click(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
