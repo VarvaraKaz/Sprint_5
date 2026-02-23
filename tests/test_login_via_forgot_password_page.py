@@ -1,32 +1,21 @@
 from pages.forgot_password_page import ForgotPasswordPage
 from pages.login_page import LoginPage
-from conftest import LOGIN_CREDENTIALS
 
-def test_login_via_forgot_password_page(driver): 
-    forgot_page = ForgotPasswordPage(driver) 
-    login_page = LoginPage(driver) 
+class TestLoginViaForgotPage:
+    def test_login_via_forgot_password_page(self, driver): 
+        forgot_page = ForgotPasswordPage(driver) 
+        login_page = LoginPage(driver) 
     
-    forgot_page.open_forgot_password_page() 
-    forgot_page.click_login_button() 
-    login_page.wait_for_login_page() 
-    login_page.login( LOGIN_CREDENTIALS["email"], LOGIN_CREDENTIALS["password"]) 
-    login_page.click_login_button() 
-    assert login_page.is_login_successful()
+        forgot_page.open_forgot_password_page() 
+        forgot_page.click_login_button() 
+        login_page.login_as_valid_user()
+        assert login_page.is_login_successful()
 
-def test_login_via_personal_account_button_on_forgot_password_page(driver):
-    forgot_page = ForgotPasswordPage(driver)
-    login_page = LoginPage(driver)
+    def test_login_via_personal_account_button_on_forgot_password_page(self, driver):
+        forgot_page = ForgotPasswordPage(driver)
+        login_page = LoginPage(driver)
 
-    forgot_page.open_forgot_password_page()
-
-    forgot_page.click_personal_account_button()
-
-    login_page.wait_for_login_page()
-
-    login_page.login(
-        LOGIN_CREDENTIALS["email"], 
-        LOGIN_CREDENTIALS["password"])
-    
-    login_page.click_login_button()
-
-    assert login_page.is_login_successful()
+        forgot_page.open_forgot_password_page()
+        forgot_page.click_personal_account_button()
+        login_page.login_as_valid_user()
+        assert login_page.is_login_successful()
