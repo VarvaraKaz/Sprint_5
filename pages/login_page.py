@@ -1,6 +1,8 @@
 from pages.base_page import BasePage
 from locators import (LogInPageLocators, MainPageLocators)
 from tests.curl import LOGIN_URL
+from data import LOGIN_CREDENTIALS
+
 
 class LoginPage(BasePage):
 
@@ -26,3 +28,10 @@ class LoginPage(BasePage):
     
     def open_login_page(self):
         self.open(LOGIN_URL)
+
+    def login_as_valid_user(self):
+        self.login(
+            LOGIN_CREDENTIALS["email"],
+            LOGIN_CREDENTIALS["password"]
+        )
+        self.click_login_button()
