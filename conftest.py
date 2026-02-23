@@ -1,12 +1,7 @@
 import pytest
 from selenium import webdriver
 from pages.login_page import LoginPage
-
-
-LOGIN_CREDENTIALS = {
-        "email": "test123456+1@gmail.com",
-        "password": "123456"
-    }
+from data import LOGIN_CREDENTIALS
 
 @pytest.fixture
 def driver():
