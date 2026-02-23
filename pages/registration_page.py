@@ -1,7 +1,6 @@
 from pages.base_page import BasePage
 from locators import (RegistrationPageLocators, LogInPageLocators, MainPageLocators)
 from tests.curl import REGISTRATION_URL
-import random
 
 class RegistrationPage(BasePage):
 
